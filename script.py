@@ -38,7 +38,7 @@ def calcular_educacao_exp():
     print("Sucesso: edu_exp_cat calculada.")
 
 def calcular_experiencia_gamma():
-    """Segunda parte: Variável de Experiência (γ11)"""
+    """Segunda parte: Variável de Experiência (γ10)"""
     d = np.array(Data.get(var=["V2009", "lw", "Ano"]), dtype=float)
     res = np.full(len(d), -1, dtype=int)
     v_anos = np.round(np.nan_to_num(d[:, 2], nan=-1))
@@ -57,11 +57,11 @@ def calcular_experiencia_gamma():
             res[idx] = c_a
 
     try:
-        Data.addVarInt("γ11")
+        Data.addVarInt("γ10")
     except:
         pass
-    Data.store("γ11", None, res)
-    print("Sucesso: γ11 calculada.")
+    Data.store("γ10", None, res)
+    print("Sucesso: γ10 calculada.")
 
 if __name__ == "__main__":
     # Chama as duas funções em sequência
