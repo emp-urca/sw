@@ -41,7 +41,7 @@ def calcular_educacao_exp():
     print(f"[Python] edu_exp_cat criada. Categorias geradas (k): {k_valor}")
 
 def calcular_experiencia_gamma():
-    """Calcula a quebra de Experiência (gamma11) para os dados atuais da memória"""
+    """Calcula a quebra de Experiência (γ10) para os dados atuais da memória"""
     d = np.array(Data.get(var=["V2009", "lw"]), dtype=float)
     res = np.full(len(d), -1, dtype=int)
     
@@ -56,8 +56,8 @@ def calcular_experiencia_gamma():
         c_a = np.digitize(d[:, 0], thr)
         res = c_a
 
-    # Alterado para 'gamma11' para evitar erros de caracteres especiais no Stata
-    nome_var = "gamma11"
+    # Mantido exatamente como no código original
+    nome_var = "γ10"
     try:
         Data.addVarInt(nome_var)
     except:
