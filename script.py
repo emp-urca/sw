@@ -16,7 +16,7 @@ def calcular_educacao_exp():
         
         if np.any(m_v):
             xt, yt = df_a[m_v, :2], df_a[m_v, 2]
-            tr = DecisionTreeRegressor(max_leaf_nodes=30, random_state=42).fit(xt, yt)
+            tr = DecisionTreeRegressor(max_leaf_nodes=35, random_state=42).fit(xt, yt)
             nodes = tr.apply(np.nan_to_num(df_a[:, :2], nan=-1))
             u_nodes = np.unique(nodes[m_v])
             m_n = {i: yt[nodes[m_v] == i].mean() for i in u_nodes}
